@@ -22,10 +22,10 @@ CREATE TABLE user_profile
 
 CREATE TABLE todo
 (
-    todo_id   BIGINT      NOT NULL,
-    text      VARCHAR(20) NOT NULL,
-    completed BOOLEAN     NOT NULL,
-    user_id   VARCHAR(40) NOT NULL,
-    PRIMARY KEY (todo_id, user_id),
-    FOREIGN KEY (user_id) REFERENCES account (user_id)
+    todo_id   BIGINT       NOT NULL,
+    text      VARCHAR(140) NOT NULL,
+    completed BOOLEAN      NOT NULL,
+    user_id   VARCHAR(40)  NOT NULL,
+    PRIMARY KEY (todo_id,  user_id),
+    FOREIGN KEY (user_id)  REFERENCES account (user_id)
 );

@@ -16,6 +16,8 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import nablarch.core.validation.ee.Length;
 import nablarch.core.validation.ee.ValidatorUtil;
 import javax.validation.constraints.NotNull;
 
@@ -62,6 +64,7 @@ public class TodosAction {
 
     public static class PostRequest {
         @NotNull
+        @Length(min = 1, max = 140)
         public String text;
     }
 
