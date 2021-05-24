@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  backend:
+    image: todo-app-backend:latest
+    ports:
+      - 8080:8080
+    depends_on: 
+      - postgres
+    environment:
+      NABLARCH_DB_URL: jdbc:postgresql://postgres:5432/postgres
+  postgres:
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432

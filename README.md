@@ -28,3 +28,17 @@ mvn jetty:run
 ```
 
 実行結果、コンソールに`Started Jetty Server`が出力されていれば、無事に起動成功です。
+
+## Container Imageをローカルに作成
+
+Container Imagesをビルドしてローカルにインストールする場合は、mvnでjibをつかってコンテナを作成する。
+
+```
+mvn package jib:dockerBuild -DskipTests
+```
+
+コンテナを利用して起動する場合は `docker/if-app-container-image-published.yml` を利用する。
+
+```
+docker-compose -f docker/if-app-container-image-published.yml
+```
