@@ -76,12 +76,12 @@ docker run --rm -d -p 9080:8080 --name todo-app-backend -v todo-app-backend-volu
 ```properties
 -Dhttp.proxyHost=[プロキシサーバのホスト]
 -Dhttp.proxyPort=[プロキシサーバのポート]
--Dhttp.proxyUser=[プロキシサーバのユーザ]
--Dhttp.proxyPassword=[プロキシサーバのパスワード]
+-Dhttp.proxyUser=[プロキシサーバの認証ユーザ]
+-Dhttp.proxyPassword=[プロキシサーバの認証パスワード]
 -Dhttps.proxyHost=[プロキシサーバのホスト]
 -Dhttps.proxyPort=[プロキシサーバのポート]
--Dhttps.proxyUser=[プロキシサーバのユーザ]
--Dhttps.proxyPassword=[プロキシサーバのパスワード]
+-Dhttps.proxyUser=[プロキシサーバの認証ユーザ]
+-Dhttps.proxyPassword=[プロキシサーバの認証パスワード]
 -Djdk.http.auth.tunneling.disabledSchemes=
 ```
 `settings.xml`の設定内容の詳細については、 [Apache Maven Project - Settings Reference - Introduction](https://maven.apache.org/settings.html#settings-reference) を参照してください。
@@ -96,17 +96,17 @@ docker run --rm -d -p 9080:8080 --name todo-app-backend -v todo-app-backend-volu
       <protocol>http</protocol>
       <host>[プロキシサーバのホスト]</host>
       <port>[プロキシサーバのポート]</port>
-      <username>[プロキシサーバのユーザ]</username>
-      <password>[プロキシサーバのパスワード]</password>
+      <username>[プロキシサーバの認証ユーザ]</username>
+      <password>[プロキシサーバの認証パスワード]</password>
     </proxy>
     <proxy>
       <id>proxy-https</id>
       <active>true</active>
       <protocol>https</protocol>
       <host>[プロキシサーバのホスト]</host>
-      <port>[プロキシポート]</port>
-      <username>[プロキシユーザ]</username>
-      <password>[プロキシパスワード]</password>
+      <port>[プロキシサーバのポート]</port>
+      <username>[プロキシサーバの認証ユーザ]</username>
+      <password>[プロキシサーバの認証パスワード]</password>
     </proxy>
   </proxies>
 ...
