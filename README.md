@@ -57,7 +57,7 @@ mvnw.cmd jetty:run
 docker run --rm -d -p 8080:8080 --name todo-app-backend todo-app-backend:latest
 ```
 
-H2に格納されているデータを永続化したい場合は、[DockerのVolume](https://docs.docker.com/storage/volumes/) を利用します。
+H2に格納されているデータを永続化したい場合は、[Volume](https://docs.docker.com/storage/volumes/) を作成します。
 
 ```bash
 docker run --rm -d -p 8080:8080 --name todo-app-backend -v todo-app-backend-volume:/usr/local/tomcat/h2 todo-app-backend:latest
