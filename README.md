@@ -21,7 +21,7 @@
 ./mvnw test
 ```
 
-Windowsの場合は、以下コマンドでテスト実行してください。
+Windowsの場合は、以下コマンドでテストを実行してください。
 
 ```bash
 mvnw.cmd test
