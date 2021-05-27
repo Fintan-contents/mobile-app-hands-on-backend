@@ -10,7 +10,7 @@
 
 |ソフトウェア|説明|
 |:---|:---|
-|APサーバ|このアプリケーションはJetty9(Apache Mavenで実行した場合)、Tomcat9(Dockerコンテナを実行した場合)を使用しています。|
+|APサーバ|このアプリケーションはJetty9(Apache Mavenで実行した場合)、Tomcat9(Dockerコンテナを実行した場合)を組み込んであるため、別途インストールの必要はありません。|
 |DBサーバ|このアプリケーションはH2 Database Engine(以下H2)を組み込んであるため、別途インストールの必要はありません。|
 
 ## テスト実行
@@ -120,4 +120,3 @@ DockerをProxy環境で動かす方法の一つとして、環境変数にプロ
 * NO_PROXY
 
 その他の方法や詳細については、[Configure Docker to use a proxy server](https://docs.docker.com/network/proxy/) を参照してください。
-
