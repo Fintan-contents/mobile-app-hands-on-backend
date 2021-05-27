@@ -67,8 +67,7 @@ docker run --rm -d -p 9080:8080 --name todo-app-backend -v todo-app-backend-volu
 
 ### Apache Maven Wrapperを利用してサンプルアプリを動かす場合
 
-以下の設定ファイルにプロキシ情報を設定する必要があります。
-設定ファイルが存在しない場合は、新規作成してください。
+以下の設定ファイルにプロキシ情報を設定する必要があります。設定ファイルが存在しない場合は、新規作成してください。
 * `[プロジェクトルート]/.mvn/jvm.config`
 * `[OSのユーザホームディレクトリ]/.m2/settings.xml`
 
