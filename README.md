@@ -65,12 +65,28 @@ docker run --rm -d -p 9080:8080 --name todo-app-backend -v todo-app-backend-volu
 
 ## Proxy環境下でサンプルアプリを動かす場合
 
-### Apache Mavenを利用してサンプルアプリを動かす場合
+### Apache Maven Wrapperを利用してサンプルアプリを動かす場合
 
-`settings.xml`にProxyの情報を設定する必要があります。  
-設定内容の詳細や、`settings.xml`の配置場所については、 [Apache Maven Project - Settings Reference - Introduction](https://maven.apache.org/settings.html#settings-reference) を参照してください。
+以下の設定ファイルにプロキシ情報を設定する必要があります。
+設定ファイルが存在しない場合は、新規作成してください。
+* `[プロジェクトルート]/.mvn/jvm.config`
+* `[OSのユーザホームディレクトリ]/.m2/settings.xml`
 
-以下は主なProxy設定情報です。
+`jvm.config`の設定例
+```properties
+-Dhttp.proxyHost=[プロキシサーバのホスト]
+-Dhttp.proxyPort=[プロキシサーバのポート]
+-Dhttp.proxyUser=[プロキシサーバのユーザ]
+-Dhttp.proxyPassword=[プロキシサーバのパスワード]
+-Dhttps.proxyHost=[プロキシサーバのホスト]
+-Dhttps.proxyPort=[プロキシサーバのポート]
+-Dhttps.proxyUser=[プロキシサーバのユーザ]
+-Dhttps.proxyPassword=[プロキシサーバのパスワード]
+-Djdk.http.auth.tunneling.disabledSchemes=
+```
+`settings.xml`の設定内容の詳細については、 [Apache Maven Project - Settings Reference - Introduction](https://maven.apache.org/settings.html#settings-reference) を参照してください。
+
+`settings.xml`の設定例
 ```xml
 ...
   <proxies>
@@ -79,20 +95,18 @@ docker run --rm -d -p 9080:8080 --name todo-app-backend -v todo-app-backend-volu
       <active>true</active>
       <protocol>http</protocol>
       <host>[プロキシサーバのホスト]</host>
-      <port>[プロキシ用ポート]</port>
-      <username>[プロキシユーザ]</username>
-      <password>[プロキシパスワード]</password>
-      <nonProxyHosts>[除外したいプロキシホスト]</nonProxyHosts>
+      <port>[プロキシサーバのポート]</port>
+      <username>[プロキシサーバのユーザ]</username>
+      <password>[プロキシサーバのパスワード]</password>
     </proxy>
     <proxy>
       <id>proxy-https</id>
       <active>true</active>
       <protocol>https</protocol>
       <host>[プロキシサーバのホスト]</host>
-      <port>[プロキシ用ポート]</port>
+      <port>[プロキシポート]</port>
       <username>[プロキシユーザ]</username>
       <password>[プロキシパスワード]</password>
-      <nonProxyHosts>[除外したいプロキシホスト]</nonProxyHosts>
     </proxy>
   </proxies>
 ...
