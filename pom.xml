@@ -275,9 +275,6 @@
             <ports>
               <port>8080</port>
             </ports>
-            <environment>
-              <FLYWAY_CLEANBEFOREMIGRATE>false</FLYWAY_CLEANBEFOREMIGRATE>
-            </environment>
           </container>
         </configuration>
       </plugin>
