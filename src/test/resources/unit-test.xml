@@ -6,6 +6,7 @@
 
   <import file="rest-component-configuration.xml" />
 
+  <config-file file="override/env.config" />
   <!-- テスティングフレームワークの設定 -->
   <import file="nablarch/test/rest-request-test.xml"/>
 
