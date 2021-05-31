@@ -49,9 +49,12 @@ mvnw.cmd jetty:run
 
 コンソールに`Started Jetty Server`が出力されていれば、無事に起動成功です。
 
+停止する場合は、`Ctrl + C` を押してください。
+
+
 ### Dockerを利用する方法
 
-以下のコマンドを実行してください。
+以下のコマンドを実行して起動ください。
 
 ```bash
 docker run --rm -d -p 9080:8080 --name todo-app-backend ghcr.io/ws-4020/todo-app-backend:latest
@@ -61,6 +64,12 @@ H2に格納されているデータを永続化したい場合は、[Volume](htt
 
 ```bash
 docker run --rm -d -p 9080:8080 --name todo-app-backend -v todo-app-backend-volume:/usr/local/tomcat/h2 ghcr.io/ws-4020/todo-app-backend:latest
+```
+
+停止する場合は、以下のコマンドを実行してください。
+
+```bash
+docker stop todo-app-backend
 ```
 
 ## Proxy環境下でサンプルアプリを動かす場合
