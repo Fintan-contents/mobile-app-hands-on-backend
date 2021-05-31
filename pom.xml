@@ -8,7 +8,7 @@
     <version>5u18</version>
   </parent>
 
-  <artifactId>mobile-todo-app-hands-on-backend</artifactId>
+  <artifactId>mobile-app-hands-on-backend</artifactId>
 
   <groupId>com.example</groupId>
   <version>0.0.1-SNAPSHOT</version>
