@@ -1,4 +1,4 @@
-name: Building container image with Jib
+name: Jib
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build container image
+    name: Build and push
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
