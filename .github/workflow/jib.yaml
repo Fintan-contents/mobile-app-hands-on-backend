@@ -3,7 +3,9 @@ name: Building container image with Jib
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - feature/jib-build-action
 
 jobs:
   build:
