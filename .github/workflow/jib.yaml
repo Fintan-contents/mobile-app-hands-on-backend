@@ -1,0 +1,32 @@
+name: Building container image with Jib
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build container image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: mvn jib:build
+        env:
+          CONTAINER_IMAGE: docker.pkg.github.com/ws-4020/mobile-app-handson-backend/mobile-app-handson-backend
+        run: |
+          mvn -B package jib:build -DskipTests -Djib.to.image=$CONTAINER_IMAGE -Djib.to.version=latest \
+              -Djib.to.auth.username=ws-4020 -Djib.to.auth.password=${{ secrets.GITHUB_TOKEN }}
+
