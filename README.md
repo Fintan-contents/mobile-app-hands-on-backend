@@ -122,3 +122,14 @@ DockerをProxy環境で動かす方法の一つとして、環境変数にプロ
 * NO_PROXY
 
 その他の方法や詳細については、[Configure Docker to use a proxy server](https://docs.docker.com/network/proxy/) を参照してください。
+
+<!-- textlint-disable -->
+
+## ライセンス
+
+ドキュメントは、<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス</a>の下に提供されており、コードサンプルは<a rel="license" href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>の下に提供されています。
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+  <img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /> </a>
+
+<!-- textlint-enable -->
