@@ -57,13 +57,13 @@ mvnw.cmd jetty:run
 以下のコマンドを実行して起動ください。
 
 ```bash
-docker run --rm -p 9080:8080 ghcr.io/ws-4020/mobile-app-hands-on-backend:latest
+docker run --rm -p 9080:8080 ghcr.io/fintan-contents/mobile-app-hands-on-backend:latest
 ```
 
 H2に格納されているデータを永続化したい場合は、[Volume](https://docs.docker.com/storage/volumes/)を作成します。
 
 ```bash
-docker run --rm -p 9080:8080 -v mobile-app-hands-on-backend-volume:/usr/local/tomcat/h2 ghcr.io/ws-4020/mobile-app-hands-on-backend:latest
+docker run --rm -p 9080:8080 -v mobile-app-hands-on-backend-volume:/usr/local/tomcat/h2 ghcr.io/fintan-contents/mobile-app-hands-on-backend:latest
 ```
 
 ## Proxy環境下でサンプルアプリを動かす場合
